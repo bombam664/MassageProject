@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="976.526" height="914" viewBox="0 0 976.526 914">
+  <g id="Group_1" data-name="Group 1" transform="translate(-512.945 -117.403)">
+    <circle id="Ellipse_110" data-name="Ellipse 110" cx="125" cy="125" r="125" transform="translate(512.945 117.403)" fill="#4f3961"/>
+    <g id="Component_2" data-name="Component 2" transform="translate(512.945 170.403)">
+      <ellipse id="Ellipse_111" data-name="Ellipse 111" cx="441.5" cy="430.5" rx="441.5" ry="430.5" fill="#40bfc1"/>
+    </g>
+    <ellipse id="Ellipse_112" data-name="Ellipse 112" cx="57.5" cy="57" rx="57.5" ry="57" transform="translate(563.945 860.403)" fill="#fc9d9d"/>
+    <ellipse id="Ellipse_113" data-name="Ellipse 113" cx="116.5" cy="117" rx="116.5" ry="117" transform="translate(1235.945 224.403)" fill="#ff6f5e"/>
+    <line id="Line_6" data-name="Line 6" x2="95.598" y2="149.77" transform="translate(1382.826 205.908)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="16"/>
+    <line id="Line_7" data-name="Line 7" x2="109.938" y2="175.263" transform="translate(1360.519 217.061)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="16"/>
+    <line id="Line_8" data-name="Line 8" x2="127.772" y2="205.721" transform="translate(1329.938 216.876)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="16"/>
+    <circle id="Ellipse_114" data-name="Ellipse 114" cx="35" cy="35" r="35" transform="translate(608.945 477.403)" fill="#707070"/>
+    <ellipse id="Ellipse_115" data-name="Ellipse 115" cx="35" cy="35.5" rx="35" ry="35.5" transform="translate(1027.945 614.403)" fill="#707070"/>
+  </g>
+</svg>
