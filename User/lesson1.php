@@ -18,7 +18,7 @@ $query = mysqli_query($conn, $sql);
 if (!$LessonID) {
     echo "<META HTTP-EQUIV='Refresh' CONTENT='0;URL=?module=404page'>";
 } else {
-    echo "<META HTTP-EQUIV='Refresh' CONTENT='2;URL=?module=lesson1&LessonID=$LessonID&Name_lesson=$Name_lesson'>";
+    // echo "<META HTTP-EQUIV='Refresh' CONTENT='2;URL=?module=lesson1&LessonID=$LessonID&Name_lesson=$Name_lesson'>";
 
 ?>
 
@@ -33,10 +33,76 @@ if (!$LessonID) {
     ?>
         <!-- ----------question array---------------- -->
 
-        <p style=" background-color: #F1EBEB;"><?php echo $Name_lesson; ?></p>
         <nav class="lesson-title">
-            <p>สัญญาณที่ <?php echo $row['Question']; ?></p>
+            <p><?php echo $Name_lesson; ?></p>
         </nav>
+        <div style="display:flex;flex-direction:row;">
+                <div class="<?php
+                            if ($Quiz == 1) {
+                                echo $SetBadge = 'badgeCheck';
+                            } elseif ($Quiz > 1) {
+                                echo $SetBadge = 'badgeThen';
+                            } else {
+                                echo $SetBadge = 'badge';
+                            }
+                            ?>
+        " onClick="location.href='?module=select_end_time_lesson&LessonID=<?php echo $LessonID; ?>
+        &Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>&SelectQ=<?php echo $SelectQ=1; ?>'">
+                    <p>1</p>
+                </div>
+                <div class="<?php
+                            if ($Quiz == 2) {
+                                echo $SetBadge = 'badgeCheck';
+                            } elseif ($Quiz > 2) {
+                                echo $SetBadge = 'badgeThen';
+                            } else {
+                                echo $SetBadge = 'badge';
+                            }
+                            ?>
+        " onClick="location.href='?module=select_end_time_lesson&LessonID=<?php echo $LessonID; ?>
+        &Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>&SelectQ=<?php echo $SelectQ=2; ?>'">
+                    <p>2</p>
+                </div>
+                <div class="<?php
+                            if ($Quiz == 3) {
+                                echo $SetBadge = 'badgeCheck';
+                            } elseif ($Quiz > 3) {
+                                echo $SetBadge = 'badgeThen';
+                            } else {
+                                echo $SetBadge = 'badge';
+                            }
+                            ?>
+        " onClick="location.href='?module=select_end_time_lesson&LessonID=<?php echo $LessonID; ?>
+        &Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>&SelectQ=<?php echo $SelectQ=3; ?>'">
+                    <p>3</p>
+                </div>
+                <div class="<?php
+                            if ($Quiz == 4) {
+                                echo $SetBadge = 'badgeCheck';
+                            } elseif ($Quiz > 4) {
+                                echo $SetBadge = 'badgeThen';
+                            } else {
+                                echo $SetBadge = 'badge';
+                            }
+                            ?>
+        " onClick="location.href='?module=select_end_time_lesson&LessonID=<?php echo $LessonID; ?>
+        &Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>&SelectQ=<?php echo $SelectQ=4; ?>'">
+                    <p>4</p>
+                </div>
+                <div class="<?php
+                            if ($Quiz == 5) {
+                                echo $SetBadge = 'badgeCheck';
+                            } elseif ($Quiz > 5) {
+                                echo $SetBadge = 'badgeCheck';
+                            } else {
+                                echo $SetBadge = 'badge';
+                            }
+                            ?>
+        " onClick="location.href='?module=select_end_time_lesson&LessonID=<?php echo $LessonID; ?>
+        &Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>&SelectQ=<?php echo $SelectQ=5; ?>'">
+                    <p>5</p>
+                </div>
+            </div>
 
         <section class="boxlesson">
             <div class="card-imgbackground" style="background-image: url('./assets_img/lesson/<?php echo $row['img']; ?>');<?php echo $row['badge_img']; ?>">
@@ -161,74 +227,10 @@ if (!$LessonID) {
             <a href="?module=back_end_time_lesson1&LessonID=<?php echo $LessonID; ?>&Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>">
                 <img src="./assets_img/icon/back.svg" alt="back" width="50">
             </a>
-            <div style="display:flex;flex-direction:row;">
-                <div class="<?php
-                            if ($Quiz == 1) {
-                                echo $SetBadge = 'badgeCheck';
-                            } elseif ($Quiz > 1) {
-                                echo $SetBadge = 'badgeThen';
-                            } else {
-                                echo $SetBadge = 'badge';
-                            }
-                            ?>
-        " onClick="location.href='?module=select_end_time_lesson&LessonID=<?php echo $LessonID; ?>
-        &Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>&SelectQ=<?php echo $SelectQ=1; ?>'">
-                    <p>1</p>
-                </div>
-                <div class="<?php
-                            if ($Quiz == 2) {
-                                echo $SetBadge = 'badgeCheck';
-                            } elseif ($Quiz > 2) {
-                                echo $SetBadge = 'badgeThen';
-                            } else {
-                                echo $SetBadge = 'badge';
-                            }
-                            ?>
-        " onClick="location.href='?module=select_end_time_lesson&LessonID=<?php echo $LessonID; ?>
-        &Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>&SelectQ=<?php echo $SelectQ=2; ?>'">
-                    <p>2</p>
-                </div>
-                <div class="<?php
-                            if ($Quiz == 3) {
-                                echo $SetBadge = 'badgeCheck';
-                            } elseif ($Quiz > 3) {
-                                echo $SetBadge = 'badgeThen';
-                            } else {
-                                echo $SetBadge = 'badge';
-                            }
-                            ?>
-        " onClick="location.href='?module=select_end_time_lesson&LessonID=<?php echo $LessonID; ?>
-        &Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>&SelectQ=<?php echo $SelectQ=3; ?>'">
-                    <p>3</p>
-                </div>
-                <div class="<?php
-                            if ($Quiz == 4) {
-                                echo $SetBadge = 'badgeCheck';
-                            } elseif ($Quiz > 4) {
-                                echo $SetBadge = 'badgeThen';
-                            } else {
-                                echo $SetBadge = 'badge';
-                            }
-                            ?>
-        " onClick="location.href='?module=select_end_time_lesson&LessonID=<?php echo $LessonID; ?>
-        &Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>&SelectQ=<?php echo $SelectQ=4; ?>'">
-                    <p>4</p>
-                </div>
-                <div class="<?php
-                            if ($Quiz == 5) {
-                                echo $SetBadge = 'badgeCheck';
-                            } elseif ($Quiz > 5) {
-                                echo $SetBadge = 'badgeCheck';
-                            } else {
-                                echo $SetBadge = 'badge';
-                            }
-                            ?>
-        " onClick="location.href='?module=select_end_time_lesson&LessonID=<?php echo $LessonID; ?>
-        &Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>&SelectQ=<?php echo $SelectQ=5; ?>'">
-                    <p>5</p>
-                </div>
-            </div>
-            <a href="?module=end_time_lesson1&LessonID=<?php echo $LessonID; ?>&Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>"><img src="./assets_img/icon/nextpage.svg" alt="next" width="50"></a>
+            
+            <a href="?module=end_time_lesson1&LessonID=<?php echo $LessonID; ?>&Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>">
+            <img src="./assets_img/icon/nextpage.svg" alt="next" width="50">
+            </a>
         </header>
 
         <!-- ----------close question array---------------- -->
