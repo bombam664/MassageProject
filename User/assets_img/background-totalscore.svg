@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1140" height="658" viewBox="0 0 1140 658">
+  <defs>
+    <clipPath id="clip-background-totalscore">
+      <rect width="1140" height="658"/>
+    </clipPath>
+  </defs>
+  <g id="background-totalscore" clip-path="url(#clip-background-totalscore)">
+    <rect width="1140" height="658" fill="#fff"/>
+    <g id="Group_1" data-name="Group 1" transform="translate(-380 -250)">
+      <circle id="Ellipse_192" data-name="Ellipse 192" cx="87.5" cy="87.5" r="87.5" transform="translate(1088 666)" fill="#fc9d9d"/>
+      <circle id="Ellipse_188" data-name="Ellipse 188" cx="56" cy="56" r="56" transform="translate(1036 377)" fill="#ff6f5e"/>
+      <circle id="Ellipse_189" data-name="Ellipse 189" cx="41" cy="41" r="41" transform="translate(680 601)" fill="#ff6f5e"/>
+      <circle id="Ellipse_190" data-name="Ellipse 190" cx="211.5" cy="211.5" r="211.5" transform="translate(735 399)" fill="#374957"/>
+      <circle id="Ellipse_191" data-name="Ellipse 191" cx="14.5" cy="14.5" r="14.5" transform="translate(706 411)" fill="#40bfc1"/>
+      <line id="Line_18" data-name="Line 18" x1="222" y2="99" transform="translate(1070.5 723.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="15"/>
+      <line id="Line_19" data-name="Line 19" x1="222" y2="99" transform="translate(1078.5 744.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="15"/>
+      <line id="Line_20" data-name="Line 20" x1="222" y2="99" transform="translate(1091.5 765.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="15"/>
+    </g>
+  </g>
+</svg>

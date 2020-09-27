@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <clipPath id="clip-img">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="img" clip-path="url(#clip-img)">
+    <rect width="1920" height="1080" fill="#fff"/>
+    <circle id="Ellipse_110" data-name="Ellipse 110" cx="116" cy="116" r="116" transform="translate(513 117)" fill="#4f3961"/>
+    <ellipse id="Ellipse_111" data-name="Ellipse 111" cx="409" cy="399" rx="409" ry="399" transform="translate(513 166)" fill="#40bfc1"/>
+    <circle id="Ellipse_112" data-name="Ellipse 112" cx="53" cy="53" r="53" transform="translate(560 805)" fill="#fc9d9d"/>
+    <ellipse id="Ellipse_113" data-name="Ellipse 113" cx="108" cy="108.5" rx="108" ry="108.5" transform="translate(1182 216)" fill="#ff6f5e"/>
+    <line id="Line_6" data-name="Line 6" x2="88.526" y2="138.69" transform="translate(1318.474 199.343)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="10"/>
+    <line id="Line_7" data-name="Line 7" x2="101.804" y2="162.297" transform="translate(1297.818 209.671)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="10"/>
+    <line id="Line_8" data-name="Line 8" x2="112.132" y2="181.478" transform="translate(1275.687 218.524)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="10"/>
+    <ellipse id="Ellipse_114" data-name="Ellipse 114" cx="32" cy="32.5" rx="32" ry="32.5" transform="translate(602 451)" fill="#707070"/>
+    <circle id="Ellipse_115" data-name="Ellipse 115" cx="32.5" cy="32.5" r="32.5" transform="translate(990 578)" fill="#707070"/>
+  </g>
+</svg>
