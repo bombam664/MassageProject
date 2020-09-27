@@ -18,7 +18,7 @@ $query = mysqli_query($conn, $sql);
 if (!$LessonID) {
     echo "<META HTTP-EQUIV='Refresh' CONTENT='0;URL=?module=404page'>";
 } else {
-    // echo "<META HTTP-EQUIV='Refresh' CONTENT='2;URL=?module=lesson1&LessonID=$LessonID&Name_lesson=$Name_lesson'>";
+    echo "<META HTTP-EQUIV='Refresh' CONTENT='2;URL=?module=lesson1&LessonID=$LessonID&Name_lesson=$Name_lesson'>";
 
 ?>
 
@@ -33,76 +33,78 @@ if (!$LessonID) {
     ?>
         <!-- ----------question array---------------- -->
 
+
         <nav class="lesson-title">
             <p><?php echo $Name_lesson; ?></p>
         </nav>
-        <div style="display:flex;flex-direction:row;">
-                <div class="<?php
-                            if ($Quiz == 1) {
-                                echo $SetBadge = 'badgeCheck';
-                            } elseif ($Quiz > 1) {
-                                echo $SetBadge = 'badgeThen';
-                            } else {
-                                echo $SetBadge = 'badge';
-                            }
-                            ?>
+
+        <header>
+            <div class="<?php
+                        if ($Quiz == 1) {
+                            echo $SetBadge = 'badgeCheck';
+                        } elseif ($Quiz > 1) {
+                            echo $SetBadge = 'badgeThen';
+                        } else {
+                            echo $SetBadge = 'badge';
+                        }
+                        ?>
         " onClick="location.href='?module=select_end_time_lesson&LessonID=<?php echo $LessonID; ?>
-        &Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>&SelectQ=<?php echo $SelectQ=1; ?>'">
-                    <p>1</p>
-                </div>
-                <div class="<?php
-                            if ($Quiz == 2) {
-                                echo $SetBadge = 'badgeCheck';
-                            } elseif ($Quiz > 2) {
-                                echo $SetBadge = 'badgeThen';
-                            } else {
-                                echo $SetBadge = 'badge';
-                            }
-                            ?>
-        " onClick="location.href='?module=select_end_time_lesson&LessonID=<?php echo $LessonID; ?>
-        &Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>&SelectQ=<?php echo $SelectQ=2; ?>'">
-                    <p>2</p>
-                </div>
-                <div class="<?php
-                            if ($Quiz == 3) {
-                                echo $SetBadge = 'badgeCheck';
-                            } elseif ($Quiz > 3) {
-                                echo $SetBadge = 'badgeThen';
-                            } else {
-                                echo $SetBadge = 'badge';
-                            }
-                            ?>
-        " onClick="location.href='?module=select_end_time_lesson&LessonID=<?php echo $LessonID; ?>
-        &Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>&SelectQ=<?php echo $SelectQ=3; ?>'">
-                    <p>3</p>
-                </div>
-                <div class="<?php
-                            if ($Quiz == 4) {
-                                echo $SetBadge = 'badgeCheck';
-                            } elseif ($Quiz > 4) {
-                                echo $SetBadge = 'badgeThen';
-                            } else {
-                                echo $SetBadge = 'badge';
-                            }
-                            ?>
-        " onClick="location.href='?module=select_end_time_lesson&LessonID=<?php echo $LessonID; ?>
-        &Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>&SelectQ=<?php echo $SelectQ=4; ?>'">
-                    <p>4</p>
-                </div>
-                <div class="<?php
-                            if ($Quiz == 5) {
-                                echo $SetBadge = 'badgeCheck';
-                            } elseif ($Quiz > 5) {
-                                echo $SetBadge = 'badgeCheck';
-                            } else {
-                                echo $SetBadge = 'badge';
-                            }
-                            ?>
-        " onClick="location.href='?module=select_end_time_lesson&LessonID=<?php echo $LessonID; ?>
-        &Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>&SelectQ=<?php echo $SelectQ=5; ?>'">
-                    <p>5</p>
-                </div>
+        &Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>&SelectQ=<?php echo $SelectQ = 1; ?>'">
+                <p>1</p>
             </div>
+            <div class="<?php
+                        if ($Quiz == 2) {
+                            echo $SetBadge = 'badgeCheck';
+                        } elseif ($Quiz > 2) {
+                            echo $SetBadge = 'badgeThen';
+                        } else {
+                            echo $SetBadge = 'badge';
+                        }
+                        ?>
+        " onClick="location.href='?module=select_end_time_lesson&LessonID=<?php echo $LessonID; ?>
+        &Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>&SelectQ=<?php echo $SelectQ = 2; ?>'">
+                <p>2</p>
+            </div>
+            <div class="<?php
+                        if ($Quiz == 3) {
+                            echo $SetBadge = 'badgeCheck';
+                        } elseif ($Quiz > 3) {
+                            echo $SetBadge = 'badgeThen';
+                        } else {
+                            echo $SetBadge = 'badge';
+                        }
+                        ?>
+        " onClick="location.href='?module=select_end_time_lesson&LessonID=<?php echo $LessonID; ?>
+        &Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>&SelectQ=<?php echo $SelectQ = 3; ?>'">
+                <p>3</p>
+            </div>
+            <div class="<?php
+                        if ($Quiz == 4) {
+                            echo $SetBadge = 'badgeCheck';
+                        } elseif ($Quiz > 4) {
+                            echo $SetBadge = 'badgeThen';
+                        } else {
+                            echo $SetBadge = 'badge';
+                        }
+                        ?>
+        " onClick="location.href='?module=select_end_time_lesson&LessonID=<?php echo $LessonID; ?>
+        &Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>&SelectQ=<?php echo $SelectQ = 4; ?>'">
+                <p>4</p>
+            </div>
+            <div class="<?php
+                        if ($Quiz == 5) {
+                            echo $SetBadge = 'badgeCheck';
+                        } elseif ($Quiz > 5) {
+                            echo $SetBadge = 'badgeCheck';
+                        } else {
+                            echo $SetBadge = 'badge';
+                        }
+                        ?>
+        " onClick="location.href='?module=select_end_time_lesson&LessonID=<?php echo $LessonID; ?>
+        &Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>&SelectQ=<?php echo $SelectQ = 5; ?>'">
+                <p>5</p>
+            </div>
+        </header>
 
         <section class="boxlesson">
             <div class="card-imgbackground" style="background-image: url('./assets_img/lesson/<?php echo $row['img']; ?>');<?php echo $row['badge_img']; ?>">
@@ -117,26 +119,38 @@ if (!$LessonID) {
                 <div class="badge-img" style="background-color:<?php echo $badge; ?>;"></div>
 
             </div>
-            <div class="lesson-boxtext">
-                <p>
-                    กดตามจุดที่แสดงไว้ ด้วยเเรง <?php echo $row['Q_force']; ?> ปอนด์
-                    เป็นเวลา <?php echo $row['Q_time']; ?> วินาที
-                    แล้วดูการแสดงค่าที่ด้านขวาของรููปภาพ
-                </p>
+
+        </section>
+
+        <section class="boxlesson-text">
+            <div class="boxlesson-text-card">
+                <div class="background-boxlesson" style="width: 100%;height:100%;padding:10px;padding-bottom:30px;">
+                    <p>กดตามจุดที่แสดงไว้ ด้วยเเรง <?php echo $row['Q_force']; ?> ปอนด์</p>
+                    <p>เป็นเวลา <?php echo $row['Q_time']; ?> วินาที</p>
+                    <p>แล้วดูการแสดงค่าที่ด้านขวาของรูปภาพ</p>
+                </div>
+              
             </div>
+
         </section>
 
         <section class="boxlesson2">
             <div class="control-progress">
                 <div class="block-progress">
-                    <p>แรง(p)</p>
+                    <div style="display: flex;flex-direction:row;justify-content:space-between;padding-right:40px;">
+                        <p>แรง(p)</p>
+                        <p><?php echo $row['Q_force']; ?></p>
+                    </div>
+
                     <div class="block-details">
                         <p style="margin-right:40px;"><?php echo $row['A_force']; ?>/<?php echo $row['Q_force']; ?></p>
+
                         <div class="progress">
                             <?php
                             $p1 = $row['Q_force'];
                             $p2 = $p1 / 100;
                             $p3 = $row['A_force'];
+                            // $p3 = 0;
                             $p4 = $p3 / $p2;
 
                             if ($p4 < 90) {
@@ -153,13 +167,18 @@ if (!$LessonID) {
                                 $color1 = '#FF0000';
                             }
                             ?>
-                            <div class="value-progrees" style="width:<?php echo $p5 ?>%;background-color:<?php echo $color1; ?>;">&nbsp;</div>
+                            <div class="value-progrees" style="width:<?php echo $p5 ?>%;background-color:<?php echo $color1; ?>;">
+                                <p><?php echo $p3; ?></p>
+                            </div>
                         </div>
                     </div>
 
                 </div>
                 <div class="block-progress">
-                    <p>เวลา(s)</p>
+                    <div style="display: flex;flex-direction:row;justify-content:space-between;padding-right:40px;">
+                        <p>เวลา(s)</p>
+                        <p>10</p>
+                    </div>
                     <div class="block-details">
                         <?php
                         $data = array($row['Q_time']);
@@ -197,13 +216,14 @@ if (!$LessonID) {
                             $s1 = $date->format('s');
                             $s2 = $s1 / 100;
                             $s3 = $date1->format('s');
+                            // $s3 = 10;
                             $s4 = $s3 / $s2;
 
 
                             if ($s4 < 90) {
                                 $s5 = $s4 - 10;
                                 $color2 = '#f1f1f1';
-                            } elseif ($s4 >= 90 && $s4 < 100) {
+                            } elseif ($s4 >= 90 && $s4 <= 100) {
                                 $s5 = $s4 - 10;
                                 $color2 = '#7CFC00';
                             } elseif ($s4 > 100) {
@@ -214,7 +234,9 @@ if (!$LessonID) {
                                 $color2 = '#FF0000';
                             }
                             ?>
-                            <div class="value-progrees" style="width:<?php echo $s5; ?>%;background-color:<?php echo $color2; ?>;">&nbsp;</div>
+                            <div class="value-progrees" style="width:<?php echo $s5; ?>%;background-color:<?php echo $color2; ?>;">
+                                <p><?php echo $s3; ?></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -223,15 +245,15 @@ if (!$LessonID) {
 
         </section>
 
-        <header>
+        <footer>
             <a href="?module=back_end_time_lesson1&LessonID=<?php echo $LessonID; ?>&Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>">
                 <img src="./assets_img/icon/back.svg" alt="back" width="50">
             </a>
-            
+
             <a href="?module=end_time_lesson1&LessonID=<?php echo $LessonID; ?>&Name_lesson=<?php echo $Name_lesson; ?>&LessonDID=<?php echo $row['LessonDID']; ?>">
-            <img src="./assets_img/icon/nextpage.svg" alt="next" width="50">
+                <img src="./assets_img/icon/nextpage.svg" alt="next" width="50">
             </a>
-        </header>
+        </footer>
 
         <!-- ----------close question array---------------- -->
 <?php
