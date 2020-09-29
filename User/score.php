@@ -15,7 +15,7 @@ $Name_lesson = $_GET['Name_lesson'];
 <section class="manual">
     <div class="block-score">
         <div class="title-score">
-            <p style="margin-left: 50px;">แบบทดสอบ สัญญาณที่ <?php echo $Quiz ?></p>
+            <p style="margin-left: 50px;">แบบทดสอบ ข้อที่ <?php echo $Quiz ?></p>
         </div>
         <div class="block-score-row">
             <div class="score-box1">
@@ -71,18 +71,18 @@ if ($query) {
         // echo "ok";
     if ($Quiz == 1) {
         $MyRandom =3;
-        echo "<META HTTP-EQUIV='Refresh' CONTENT='5;URL=?module=quiz2&LessonID=$LessonID&Quiz=$Quiz&MyRandom=$MyRandom&Name_lesson=$Name_lesson'>";    
+        echo "<META HTTP-EQUIV='Refresh' CONTENT='4;URL=?module=quiz2&LessonID=$LessonID&Quiz=$Quiz&MyRandom=$MyRandom&Name_lesson=$Name_lesson'>";    
     }elseif ($Quiz == 2) {
         $MyRandom =4;
-        echo "<META HTTP-EQUIV='Refresh' CONTENT='5;URL=?module=quiz2&LessonID=$LessonID&Quiz=$Quiz&MyRandom=$MyRandom&Name_lesson=$Name_lesson'>";
+        echo "<META HTTP-EQUIV='Refresh' CONTENT='4;URL=?module=quiz2&LessonID=$LessonID&Quiz=$Quiz&MyRandom=$MyRandom&Name_lesson=$Name_lesson'>";
     } elseif ($Quiz == 3) {
         $MyRandom = 5;
-        echo "<META HTTP-EQUIV='Refresh' CONTENT='5;URL=?module=quiz2&LessonID=$LessonID&Quiz=$Quiz&MyRandom=$MyRandom&Name_lesson=$Name_lesson'>";
+        echo "<META HTTP-EQUIV='Refresh' CONTENT='4;URL=?module=quiz2&LessonID=$LessonID&Quiz=$Quiz&MyRandom=$MyRandom&Name_lesson=$Name_lesson'>";
     } elseif ($Quiz == 4) {
         $MyRandom = 2;
-        echo "<META HTTP-EQUIV='Refresh' CONTENT='5;URL=?module=quiz2&LessonID=$LessonID&Quiz=$Quiz&MyRandom=$MyRandom&Name_lesson=$Name_lesson'>";
+        echo "<META HTTP-EQUIV='Refresh' CONTENT='4;URL=?module=quiz2&LessonID=$LessonID&Quiz=$Quiz&MyRandom=$MyRandom&Name_lesson=$Name_lesson'>";
     } else {
-        echo "<META HTTP-EQUIV='Refresh' CONTENT='5;URL=?module=totalscore&LessonID=$LessonID'>";
+        echo "<META HTTP-EQUIV='Refresh' CONTENT='4;URL=?module=totalscore&LessonID=$LessonID'>";
     }
 } else {
     echo "no ok .$sql";

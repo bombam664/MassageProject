@@ -29,11 +29,58 @@ if (!$LessonID) {
 
     ?>
         <!-- ----------question array---------------- -->
-        <p style=" background-color: #F1EBEB;"><?php echo $Name_lesson; ?></p>
         <nav class="lesson-title">
-            <p>แบบทดสอบ สัญญาณที่ <?php echo $row['Question']; ?></p>
+            <p><?php echo $Name_lesson; ?></p>
         </nav>
-        <section class="boxlesson">
+        <header>
+            <div class="<?php
+                        if ($row['Question'] == 1) {
+                            echo $SetBadge = 'badgeCheck';
+                        } else {
+                            echo $SetBadge = 'badge';
+                        }
+                        ?>">
+                <p>1</p>
+            </div>
+            <div class="<?php
+                        if ($row['Question'] == 2) {
+                            echo $SetBadge = 'badgeCheck';
+                        } else {
+                            echo $SetBadge = 'badge';
+                        }
+                        ?>">
+                <p>2</p>
+            </div>
+            <div class="<?php
+                        if ($row['Question'] == 3) {
+                            echo $SetBadge = 'badgeCheck';
+                        } else {
+                            echo $SetBadge = 'badge';
+                        }
+                        ?>">
+                <p>3</p>
+            </div>
+            <div class="<?php
+                        if ($row['Question'] == 4) {
+                            echo $SetBadge = 'badgeCheck';
+                        } else {
+                            echo $SetBadge = 'badge';
+                        }
+                        ?>">
+                <p>4</p>
+            </div>
+            <div class="<?php
+                        if ($row['Question'] == 5) {
+                            echo $SetBadge = 'badgeCheck';
+                        } else {
+                            echo $SetBadge = 'badge';
+                        }
+                        ?>">
+                <p>5</p>
+            </div>
+
+        </header>
+        <section class="boxlesson-partQuiz">
             <div class="card-imgbackground" style="background-image: url('./assets_img/lesson/<?php echo $row['img']; ?>');<?php echo $row['badge_img']; ?>">
                 <?php
                 $A_force = $row['A_force'];
@@ -47,39 +94,65 @@ if (!$LessonID) {
                 ?>
                 <div class="badge-img" style="<?php echo $badge; ?>"></div>
             </div>
-            <div class="lesson-boxtext">
-                <p>
-                    กดจุดที่ถูกต้องด้วยเเรงเเละเวลาที่กำหนด
-                    แล้วดูการแสดงค่าที่ด้านขวาของรูปภาพ
-                </p>
-            </div>
+
         </section>
-        <section class="boxlesson2">
-        <div class="Count_time">
+
+        <section class="boxlesson-text-partQuiz">
+            <div class="boxlesson-text-card">
+                <div class="background-boxlesson" style="width: 100%;height:100%;padding:10px;padding-bottom:30px;">
+                    <p>กดจุดที่ถูกต้องด้วยเเรงเเละเวลาที่กำหนด
+                        แล้วดูการแสดงค่าที่ด้านขวาของรูปภาพ</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="boxlesson2-partQuiz">
+            <div class="Count_time">
                 <?php
                 // -------------Count time-----------------
-                $data2 = array($row['Count_time']);
-                $date2 = new DateTime('0000-00-00 00:00:00');
+                $dataC = array($row['Count_time']);
+                $dateC = new DateTime('0000-00-00 00:00:00');
                 $h = 0;
                 $m = 0;
                 $s = 0;
-                foreach ($data2 as $time) {
+                foreach ($dataC as $time) {
                     $a = explode(":", $time);
                     $h = $h + $a[0];
                     $m = $m + $a[1];
                     $s = $s + $a[2];
                 }
-                $date2->modify("$h hour $m min $s sec");
-                $date2->format('s');
+                $dateC->modify("$h hour $m min $s sec");
+                $dateC->format('s');
                 ?>
-                <p>เวลา &nbsp;<p style="font-size:35px;color:#E30C0C;"><?php echo $date2->format('s'); ?></p>&nbsp; วินาที</p>
+                <p>เวลา &nbsp;<p style="font-size:35px;color:#E30C0C;"><?php echo $dateC->format('s'); ?></p>&nbsp; วินาที</p>
+                <?php
+                // $c1 = 0;
+                $c1 = $dateC->format('s');
+                $c2 = 0;
+                if ($c1 == $c2) {
+                    $Question = $row['Question'];
+                    $LessonDID = $row['LessonDID'];
+                    $modal = "block";
+                } else {
+                    // echo "ok";
+                    echo "<META HTTP-EQUIV='Refresh' CONTENT='2;URL=?module=quiz2&LessonID=$LessonID
+                    &Quiz=$Quiz&MyRandom=$MyRandom&Name_lesson=$Name_lesson'>";
+                    $modal = "none";
+                }
+
+                ?>
             </div>
             <div class="control-progress">
                 <div class="block-progress">
-                    <p>แรง(p)</p>
+                    <div style="display: flex;flex-direction:row;justify-content:space-between;padding-right:40px;">
+                        <p>แรง(p)</p>
+                        <p><?php echo $row['Q_force']; ?></p>
+                    </div>
                     <div class="block-details">
                         <p style="margin-right:60px;"><?php echo $row['A_force']; ?>/<?php echo $row['Q_force']; ?></p>
-                        <div class="progress" style="padding-bottom:4.5px;">
+                        <div class="progress">
                             <?php
                             $p1 = $row['Q_force'];
                             $p2 = $p1 / 100;
@@ -104,14 +177,19 @@ if (!$LessonID) {
                                 $PointForce = 'false';
                             }
                             ?>
-                            <div class="value-progrees" style="width:<?php echo $p5 ?>%;background-color:<?php echo $color1; ?>;">&nbsp;</div>
+                            <div class="value-progrees" style="width:<?php echo $p5 ?>%;background-color:<?php echo $color1; ?>;">
+                                <p><?php echo $p3; ?></p>
+                            </div>
                         </div>
                     </div>
 
                 </div>
 
                 <div class="block-progress">
-                    <p>เวลา(s)</p>
+                    <div style="display: flex;flex-direction:row;justify-content:space-between;padding-right:40px;">
+                        <p>เวลา(s)</p>
+                        <p>10</p>
+                    </div>
                     <div class="block-details">
                         <?php
                         $data = array($row['Q_time']);
@@ -171,97 +249,21 @@ if (!$LessonID) {
                                 $PointTime = 'false';
                             }
                             ?>
-                            <div class="value-progrees" style="width:<?php echo $s5; ?>%;background-color:<?php echo $color2; ?>;">&nbsp;</div>
+                            <div class="value-progrees" style="width:<?php echo $s5; ?>%;background-color:<?php echo $color2; ?>;">
+                                <p><?php echo $s3; ?></p>
+                            </div>
                         </div>
                     </div>
 
                 </div>
 
             </div>
-            
-            <?php
-            // $c1 = 0;
-            $c1=$date2->format('s');
-            $c2 = 0;
-            if ($c1 == $c2) {
-                $Question = $row['Question'];
-                $LessonDID = $row['LessonDID'];
-                $modal = "block";
-            } else {
-                // echo "ok";
-                echo "<META HTTP-EQUIV='Refresh' CONTENT='2;URL=?module=quiz2&LessonID=$LessonID
-                &Quiz=$Quiz&MyRandom=$MyRandom&Name_lesson=$Name_lesson'>";
-                $modal = "none";
-            }
 
-            ?>
+
         </section>
-        <header style="justify-content: center;">
-            <div style="display:flex;flex-direction:row;">
-                <div class="<?php
-                            if ($Quiz2 == 1) {
-                                echo $SetBadge = 'badgeCheck';
-                            } elseif ($Quiz2 > 1) {
-                                echo $SetBadge = 'badgeThen';
-                            } else {
-                                echo $SetBadge = 'badge';
-                            }
-                            ?>
-    ">
-                    <p>1</p>
-                </div>
-                <div class="<?php
-                            if ($Quiz2 == 2) {
-                                echo $SetBadge = 'badgeCheck';
-                            } elseif ($Quiz2 > 2) {
-                                echo $SetBadge = 'badgeThen';
-                            } else {
-                                echo $SetBadge = 'badge';
-                            }
-                            ?>
-    ">
-                    <p>2</p>
-                </div>
-                <div class="<?php
-                            if ($Quiz2 == 3) {
-                                echo $SetBadge = 'badgeCheck';
-                            } elseif ($Quiz2 > 3) {
-                                echo $SetBadge = 'badgeThen';
-                            } else {
-                                echo $SetBadge = 'badge';
-                            }
-                            ?>
-    ">
-                    <p>3</p>
-                </div>
-                <div class="<?php
-                            if ($Quiz2 == 4) {
-                                echo $SetBadge = 'badgeCheck';
-                            } elseif ($Quiz2 > 4) {
-                                echo $SetBadge = 'badgeThen';
-                            } else {
-                                echo $SetBadge = 'badge';
-                            }
-                            ?>
-        
-    ">
-                    <p>4</p>
-                </div>
-                <div class="<?php
-                            if ($Quiz2 == 5) {
-                                echo $SetBadge = 'badgeCheck';
-                            } else {
-                                echo $SetBadge = 'badge';
-                            }
-                            ?>
-    ">
-                    <p>5</p>
-                </div>
 
-            </div>
-        </header>
 
-        <div  class="modal" style="display:<?php echo $modal; ?>">
+        <div class="modal" style="display:<?php echo $modal; ?>">
             <div class="modal-content">
                 <div style="text-align:center;">
                     <p class="text-modal">
