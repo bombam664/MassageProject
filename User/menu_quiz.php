@@ -7,8 +7,8 @@ $sql = "SELECT count(en.EnrollID) as EnrollID, en.CustomerID, en.LessonID ,les.N
  FROM enroll_lesson en 
  LEFT JOIN lesson les
  ON en.LessonID=les.LessonID
- GROUP BY LessonID
- HAVING CustomerID=$CustomerID";
+ GROUP BY en.LessonID
+ HAVING en.CustomerID=$CustomerID";
 $query = mysqli_query($conn, $sql);
 ?>
 
@@ -21,7 +21,7 @@ $query = mysqli_query($conn, $sql);
 
 
         <div class="block-row">
-            <a href="?module=loading&LessonID=<?php echo $row['LessonID']; ?>&Name_lesson=<?php echo $row['Name_lesson'];  ?>" class="lesson">
+            <a href="?module=enroll_quiz&LessonID=<?php echo $row['LessonID']; ?>&Name_lesson=<?php echo $row['Name_lesson'];  ?>" class="lesson">
                 <div class="btn-menuLesson">
                     <p><?php echo $row['Name_lesson']; ?></p>
                     <img src="./assets_img/icon/next.svg" alt="next" class="img-button">

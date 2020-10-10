@@ -3,7 +3,7 @@
        <div class="body-card">
             <div class="box lg">
                 <div class="box-login">
-                    <img src="./assets/Logo.svg" alt="LOGO" class="img-logo">
+                    <img src="./assets/logo.svg" alt="LOGO" class="img-logo">
                 </div> 
             </div>
             <div class="box2 sm">
@@ -13,7 +13,7 @@
                     </div>
                     <div class="control-form"> 
                     <img src="./assets/name.svg" alt="fullname" width="20px">
-                        <input type="text" name="name" placeholder="ชื่อ" required>
+                        <input type="text" name="name" placeholder="ชื่อ-นามสกุล" required>
                     </div>
                     <div class="control-form"> 
                     <img src="./assets/gender.svg" alt="user" width="20px">

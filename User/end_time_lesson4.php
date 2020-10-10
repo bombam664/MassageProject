@@ -22,8 +22,8 @@ WHERE CustomerID=$CustomerID AND LessonDID=$LessonDID)";
 $query = mysqli_query($conn,$sql);
 while($row=$query->fetch_assoc()){
     $TimeonlesID=$row['TimeonlesID'];
-    $row['LessonDID'];
-    if($row['LessonDID']==$LessonDID){
+    $LessonDID=$row['LessonDID'];
+    if($LessonDID==$LessonDID){
         
         $sqla="UPDATE timeonlesson SET Time_end='$endTime' WHERE TimeonlesID='$TimeonlesID'";
         $querya = mysqli_query($conn,$sqla);

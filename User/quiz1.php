@@ -264,7 +264,7 @@ if (!$LessonID) {
                 </div>
 
                 <div class="block-modal">
-                    <a href="?module=score&
+                    <a href="?module=end_time_quiz&
                 LessonID=<?php echo $LessonID; ?>&LessonDID=<?php echo $LessonDID; ?>
                 &Question=<?php echo $Question; ?>&PointSensor=<?php echo $PointSensor; ?>
                 &PointForce=<?php echo $PointForce; ?>&PointTime=<?php echo $PointTime; ?>

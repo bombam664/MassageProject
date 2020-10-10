@@ -1,7 +1,7 @@
 <?php 
 $LessonID=$_GET['LessonID'];
 $Name_lesson=$_GET['Name_lesson'];
-echo "<META HTTP-EQUIV='Refresh' CONTENT='3;URL=?module=quiz1&LessonID=$LessonID&Name_lesson=$Name_lesson'>";
+echo "<META HTTP-EQUIV='Refresh' CONTENT='3;URL=?module=start_time_quiz1&LessonID=$LessonID&Name_lesson=$Name_lesson'>";
 ?>
 <section class="manual">
     <div class="block-load">
