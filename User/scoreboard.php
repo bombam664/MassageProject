@@ -30,10 +30,10 @@ $query = mysqli_query($conn, $sql);
             ?>
             <div class="table-scoreboard">
                 <div class="text-scoreboard">
-                    <p><?php echo $i; ?></p>
+                    <p style="margin-right: 20px;"><?php echo $i; ?></p>
                     <p><?php echo $row['Name_lesson']; ?></p>
                 </div>
-                <p style="margin-right: 20px;"><?php echo $row['Totalscore']; ?></p>
+                <p><?php echo $row['Totalscore']; ?> /15</p>
             </div>
             
         <?php

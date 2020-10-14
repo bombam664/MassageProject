@@ -118,9 +118,107 @@ if (!$LessonID) {
         <section class="boxlesson-text">
             <div class="boxlesson-text-card">
                 <div class="background-boxlesson" style="width: 100%;height:100%;padding:10px;padding-bottom:30px;">
-                    <p>กดตามจุดที่แสดงไว้ ด้วยเเรง <?php echo $row['Q_force']; ?> ปอนด์</p>
-                    <p>เป็นเวลา <?php echo $row['Q_time']; ?> วินาที</p>
-                    <p>แล้วดูการแสดงค่าที่ด้านขวาของรูปภาพ</p>
+                    <?php
+
+                    $p1 = $row['Q_force'];
+                    $p2 = $p1 / 100;
+                    $p3 = $row['A_force'];
+                    // $p3 = 40;
+                    $p4 = $p3 / $p2;
+
+                    if ($p4 < 90) {
+                        $force1 = '#f1f1f1';
+                    } elseif ($p4 >= 90 && $p4 <= 100) {
+                        $force1 = '#7CFC00';
+                    } elseif ($p4 > 100) {
+                        $force1 = '#FF0000';
+                    } else {
+                        $force1 = '#FF0000';
+                    }
+
+                    $data = array($row['Q_time']);
+                    $date = new DateTime('0000-00-00 00:00:00');
+                    $h = 0;
+                    $m = 0;
+                    $s = 0;
+                    foreach ($data as $time) {
+                        $a = explode(":", $time);
+                        $h = $h + $a[0];
+                        $m = $m + $a[1];
+                        $s = $s + $a[2];
+                    }
+                    $date->modify("$h hour $m min $s sec");
+                    $date->format('s');
+                    // ---------------answer data date---------------
+                    $data1 = array($row['A_time']);
+                    $date1 = new DateTime('0000-00-00 00:00:00');
+                    $h = 0;
+                    $m = 0;
+                    $s = 0;
+                    foreach ($data1 as $time) {
+                        $a = explode(":", $time);
+                        $h = $h + $a[0];
+                        $m = $m + $a[1];
+                        $s = $s + $a[2];
+                    }
+                    $date1->modify("$h hour $m min $s sec");
+                    $date1->format('s');
+
+                    $s1 = $date->format('s');
+                    $s2 = $s1 / 100;
+                    $s3 = $date1->format('s');
+                    // $s3 = 0;
+                    $s4 = $s3 / $s2;
+
+                    if ($s4 < 90) {
+                        $time1 = '#f1f1f1';
+                    } elseif ($s4 >= 90 && $s4 <= 100) {
+                        $time1 = '#7CFC00';
+                    } elseif ($s4 > 100) {
+                        $time1 = '#FF0000';
+                    } else {
+                        $time1 = '#FF0000';
+                    }
+
+                    if ($force1 == '#FF0000' && $time1 == '#FF0000') {
+                        echo '<p class="changtextbox1"><strong style="font-size:clamp(35px,1.5vw,35px);
+font-weight:bold;color:#fa3333;">โอ้ยเจ็บ!</strong> กดแรงไปแล้ว</p>';
+                        echo '<p class="changtextbox2">และใช้เวลามากเกินไปแล้วด้วยนะ</p>';
+                    } elseif ($force1 == '#FF0000' && $time1 == '#7CFC00') {
+                        echo '<p class="changtextbox1"><strong style="font-size:clamp(35px,1.5vw,35px);
+font-weight:bold;color:#fa3333;">โอ้ยเจ็บ!</strong> กดแรงไปแล้ว</p>';
+                        echo '<p  class="changtextbox2">กดเบาๆ กว่านี้อีกหน่อย</p>';
+                    } elseif ($force1 == '#FF0000' && $time1 == '#f1f1f1') {
+                        echo '<p class="changtextbox1"><strong style="font-size:clamp(35px,1.5vw,35px);
+font-weight:bold;color:#fa3333;">โอ้ยเจ็บ!</strong> กดแรงไปแล้ว</p>';
+                        echo '<p  class="changtextbox2">กดเบาๆ กว่านี้อีกหน่อย</p>';
+                        echo '<p class="changtextbox2">และกดให้นานอีกนิดนะ</p>';
+                    } elseif ($force1 == '#7CFC00' && $time1 == '#FF0000') {
+                        echo '<p class="changtextbox1">ใช้เวลามากเกินไปแล้วนะ</p>';
+                        echo '<p class="changtextbox2">อีกนิดเดียว ครั้งหน้าลดลงหน่อย</p>';
+                    } elseif ($force1 == '#7CFC00' && $time1 == '#7CFC00') {
+                        echo '<p class="changtextbox1">เย้... ยินดีด้วย</p>';
+                        echo '<p class="changtextbox2">บรรลุเป้าหมายแล้วนะ</p>';
+                    } elseif ($force1 == '#7CFC00' && $time1 == '#f1f1f1') {
+                        echo '<p class="changtextbox1">กดให้นานอีกนิด...</p>';
+                        echo '<p class="changtextbox2">เกือบถึงค่าเวลาเป้าหมายแล้ว...</p>';
+                    } elseif ($force1 == '#f1f1f1' && $time1 == '#FF0000') {
+                        echo '<p class="changtextbox1"><strong style="font-size:clamp(35px,1.5vw,35px);font-weight:bold;color:#fa3333;">เพิ่ม</strong> แรงอีกนิด...</p>';
+                        echo '<p class="changtextbox2">ใช้เวลามากเกินไปแล้วนะ</p>';
+                    } elseif ($force1 == '#f1f1f1' && $time1 == '#7CFC00') {
+                        echo '<p class="changtextbox1"><strong style="font-size:clamp(35px,1.5vw,35px);font-weight:bold;color:#fa3333;">เพิ่ม</strong> แรงอีกนิด...</p>';
+                        echo '<p class="changtextbox2">เกือบถึงค่าของแรงเป้าหมายแล้ว...</p>';
+                    } else {
+                        echo '<p class="changtextbox2" style="font-size:clamp(20px,1vw,20px);">กดตามจุดที่แสดงไว้ ด้วยเเรง ';
+                        echo $row['Q_force'];
+                        echo ' ปอนด์</p>';
+                        echo '<p class="changtextbox2" style="font-size:clamp(20px,1vw,20px);">เป็นเวลา ';
+                        echo $s1;
+                        echo ' วินาที</p>';
+                        echo '<p class="changtextbox2" style="font-size:clamp(20px,1vw,20px);">แล้วดูการแสดงค่าที่ด้านขวาของรูปภาพ</p>';
+                    }
+
+                    ?>
                 </div>
 
             </div>
@@ -139,11 +237,7 @@ if (!$LessonID) {
                         <p style="margin-right:40px;"><?php echo $row['A_force']; ?>/<?php echo $row['Q_force']; ?></p>
                         <div class="progress">
                             <?php
-                            $p1 = $row['Q_force'];
-                            $p2 = $p1 / 100;
-                            $p3 = $row['A_force'];;
-                            $p4 = $p3 / $p2;
-
+                            
                             if ($p4 < 90) {
                                 $p5 = $p4 - 10;
                                 $color1 = '#f1f1f1';
@@ -172,49 +266,11 @@ if (!$LessonID) {
                         <p>10</p>
                     </div>
                     <div class="block-details">
-                        <?php
-                        $data = array($row['Q_time']);
-                        $date = new DateTime('0000-00-00 00:00:00');
-                        $h = 0;
-                        $m = 0;
-                        $s = 0;
-                        foreach ($data as $time) {
-                            $a = explode(":", $time);
-                            $h = $h + $a[0];
-                            $m = $m + $a[1];
-                            $s = $s + $a[2];
-                        }
-                        $date->modify("$h hour $m min $s sec");
-                        $date->format('s');
-
-                        // ---------------answer data date---------------
-                        $data1 = array($row['A_time']);
-                        $date1 = new DateTime('0000-00-00 00:00:00');
-                        $h = 0;
-                        $m = 0;
-                        $s = 0;
-                        foreach ($data1 as $time) {
-                            $a = explode(":", $time);
-                            $h = $h + $a[0];
-                            $m = $m + $a[1];
-                            $s = $s + $a[2];
-                        }
-                        $date1->modify("$h hour $m min $s sec");
-                        $date1->format('s');
-
-
-
-
-                        ?>
+                       
                         <p style="margin-right:25px;"><?php echo $date1->format('s'); ?>/<?php echo $date->format('s'); ?></p>
                         <div class="progress">
                             <?php
-                            $s1 = $date->format('s');
-                            $s2 = $s1 / 100;
-                            $s3 = $date1->format('s');
-                            $s4 = $s3 / $s2;
-
-
+                            
                             if ($s4 < 90) {
                                 $s5 = $s4 - 10;
                                 $color2 = '#f1f1f1';

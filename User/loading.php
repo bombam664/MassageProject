@@ -5,7 +5,7 @@ echo "<META HTTP-EQUIV='Refresh' CONTENT='3;URL=?module=start_time_quiz1&LessonI
 ?>
 <section class="manual">
     <div class="block-load">
-        <img src="../assets/Logo.svg" class="img-loading" alt="logo">
+        <img src="../assets/logo.svg" class="img-loading" alt="logo">
         <div class="block-ball">
             <marquee behavior="alternate" Direction="up" class="control-marquee" scrollamount="6">
             <div class="ball"></div>

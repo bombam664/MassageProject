@@ -336,6 +336,19 @@ footer{
     color: #000000;
     background-color: #F1EBEB;
 }
+ .changtextbox1{
+    font-size:clamp(30px ,1vw ,30px);
+    color:#fff;
+    font-weight:bold;
+    text-shadow: 1.5px 2px #707070;
+
+ }
+ .changtextbox2{
+    font-Size:clamp(25px, 1vw, 25px);
+    color:#fff;
+    font-weight:bold;
+    text-shadow: 1.5px 2px #707070
+ }
 
 /* ---------------------part quiz------------------- */
 
@@ -902,10 +915,10 @@ p.detail-totalscore{
     color: #000000;
 }
 .text-scoreboard{
-    width: 15%;
+    width: 80%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     /* border: #01A9B4 1px solid; */
 
@@ -1065,9 +1078,7 @@ p.heading-text{
         height: 25vh;
         font-size: larger;
     }
-    .text-scoreboard{
-        width: 20%;
-    }
+    
  .score-text{
     font-size: 25px;
 }
@@ -1114,9 +1125,7 @@ p.heading-text{
     .block-card-2{
         margin: 0;
     }
-    .text-scoreboard{
-        width: 30%;
-    }
+   
  
   }
   @media screen and (max-width:600px) {
@@ -1267,9 +1276,7 @@ p.heading-text{
     .table-scoreboard{
         font-size: small;
     }
-    .text-scoreboard{
-        width: 60%;
-    }
+    
     p.heading-text{
         margin-left:0;
     }

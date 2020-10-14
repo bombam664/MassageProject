@@ -9,7 +9,7 @@ $sql="INSERT INTO enroll_lesson(CustomerID ,LessonID)VALUES('$CustomerID','$Less
 $query=mysqli_query($conn,$sql);
 if($query){
      // echo "ok";
-     echo "<META HTTP-EQUIV='Refresh' CONTENT='1;URL=?module=start_time_lesson1&LessonID=$LessonID&Name_lesson=$Name_lesson'>";
+     echo "<META HTTP-EQUIV='Refresh' CONTENT='0;URL=?module=start_time_lesson1&LessonID=$LessonID&Name_lesson=$Name_lesson'>";
 }else{
     echo "no ok .$sql";
 }

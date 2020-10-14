@@ -3,12 +3,13 @@ include("../connectDB.php");
 session_start();
 $CustomerID = $_SESSION['CustomerID'];
 
-$sql = "SELECT count(en.EnrollID) as EnrollID, en.CustomerID, en.LessonID ,les.Name_lesson
- FROM enroll_lesson en 
- LEFT JOIN lesson les
+$sql = "SELECT en.EnrollID, en.CustomerID, COUNT(en.LessonID) as countLesID ,les.LessonID ,les.Name_lesson 
+FROM enroll_lesson en 
+LEFT JOIN lesson les
  ON en.LessonID=les.LessonID
- GROUP BY en.LessonID
- HAVING en.CustomerID=$CustomerID";
+WHERE  en.CustomerID = $CustomerID
+GROUP BY en.LessonID 
+ORDER by en.LessonID";
 $query = mysqli_query($conn, $sql);
 ?>
 
@@ -17,6 +18,8 @@ $query = mysqli_query($conn, $sql);
     <?php
     while ($row = $query->fetch_assoc()) {
         $row['EnrollID'];
+        $row['countLesID'];
+        $row['LessonID'];
     ?>
 
 

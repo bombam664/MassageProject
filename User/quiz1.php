@@ -5,7 +5,7 @@ $CustomerID = $_SESSION['CustomerID'];
 $LessonID = $_GET['LessonID'];
 $Name_lesson = $_GET['Name_lesson'];
 $sql = "SELECT les.LessonID, les.LessonDID , les.Question , les.img ,les.badge_img , les.Q_force , les.Q_time
-,da.SensorID,da.machineID,da.CustomerID,da.A_force,da.A_time,da.Count_time
+,da.SensorID,da.machineID,da.CustomerID,da.A_force,da.A_time,les.CountTime
 FROM lesson_details les
 LEFT JOIN data_sensor da
 on les.LessonDID = da.LessonDID 
@@ -108,31 +108,26 @@ if (!$LessonID) {
             <div class="Count_time">
                 <?php
                 // -------------Count time-----------------
-                $dataC = array($row['Count_time']);
-                $dateC = new DateTime('0000-00-00 00:00:00');
-                $h = 0;
-                $m = 0;
-                $s = 0;
-                foreach ($dataC as $time) {
-                    $a = explode(":", $time);
-                    $h = $h + $a[0];
-                    $m = $m + $a[1];
-                    $s = $s + $a[2];
+                
+                $dataCR = $_GET['dataC'];
+
+                if($dataCR == 0){
+                    $dataC = $row['CountTime'];
+                }else{
+                    $dataC = $dataCR-1;
                 }
-                $dateC->modify("$h hour $m min $s sec");
-                $dateC->format('s');
+                
                 ?>
-                <p>เวลา &nbsp;<p style="font-size:35px;color:#E30C0C;"><?php echo $dateC->format('s'); ?></p>&nbsp; วินาที</p>
+                <p>เวลา &nbsp;<p style="font-size:35px;color:#E30C0C;"><?php echo $dataC; ?></p>&nbsp; วินาที</p>
                 <?php
-                //  $c1 = 0;
-                $c1 = $dateC->format('s');
+                 $c1 = $dataC;
                 $c2 = 0;
                 if ($c1 == $c2) {
                     $Question = $row['Question'];
                     $LessonDID = $row['LessonDID'];
                     $modal = "block";
                 } else {
-                    echo "<META HTTP-EQUIV='Refresh' CONTENT='2;URL=?module=quiz1&LessonID=$LessonID&Name_lesson=$Name_lesson'>";
+                    echo "<META HTTP-EQUIV='Refresh' CONTENT='2;URL=?module=quiz1&LessonID=$LessonID&Name_lesson=$Name_lesson&dataC=$dataC'>";
                     $modal = "none";
                 }
 
